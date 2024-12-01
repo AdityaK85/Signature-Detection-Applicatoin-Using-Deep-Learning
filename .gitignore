@@ -1,0 +1,11 @@
+# Ignore virtual environment
+proj_env/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore database and media files
+db.sqlite3
+media/

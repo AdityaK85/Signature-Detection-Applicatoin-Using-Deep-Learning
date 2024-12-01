@@ -1,0 +1,304 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Signature Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700i,900|Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %} ">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+
+    <style>
+      .loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spinner */
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+    </style>
+
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    
+    
+    <div class="site-wrap" id="home-section">
+
+      
+
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+
+      <header class="site-navbar site-navbar-target bg-white" role="banner">
+
+        <div class="container">
+
+          <div id="loader" class="loader-overlay" style="display: none;">
+            <div class="spinner"></div>
+          </div>
+
+          <div class="row align-items-center position-relative">
+
+            <div class="col-lg-4">
+              <!-- <nav class="site-navigation text-right ml-auto " role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                  <li><a href="work.html" class="nav-link">Work</a></li>
+                  <li><a href="what-we-do.html" class="nav-link">What We Do</a></li>
+                </ul>
+              </nav> -->
+            </div>
+            <div class="col-lg-4 text-center">
+              <div class="">
+                <a href="#" style="font-weight: bold;font-size: x-large;font-family: system-ui;color: black;" >SIGNATURE DETECTION</a>
+              </div>
+
+
+              <div class="ml-auto toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-white"><span class="icon-menu h3 text-primary"></span></a></div>
+            </div>
+            <div class="col-lg-4">
+              <!-- <nav class="site-navigation text-left mr-auto " role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                  <li><a href="about.html" class="nav-link">About</a></li>
+                  <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                  <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+              </nav> -->
+            </div>
+            
+
+          </div>
+        </div>
+
+      </header>
+
+
+
+
+    <div class="owl-carousel-wrapper">
+
+      
+
+      <div class="box-92819 shadow-lg">
+        
+
+          <div>
+              <div class="row" style="justify-content: space-evenly;">
+                <div class="col-4">
+                  <img src="{% static 'images/hero_1.jpg' %}" alt="Preview" id="preview1" style="width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;"/>
+                  <input type="file" id="fileInput1" accept="image/*">
+                </div>
+                <div class="col-4">
+                  <img src="{% static 'images/hero_1.jpg' %}" alt="Preview" id="preview2" style="width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;"/>
+                  <input type="file" id="fileInput2" accept="image/*">
+                </div>
+              </div>
+              <h3 id="result_h3" ></h3>
+            <p class="mb-0 mt-4 d-flex justify-content-center text-white"><a type="button" onclick="CompareSignature()" class="btn btn-primary">Check</a></p>
+          </div>
+
+          
+
+        
+      </div>
+
+
+
+      <div class="owl-carousel owl-1 ">
+        <div class="ftco-cover-1" style="background-image: url('{% static 'images/hero_1.jpg' %} ');"></div>
+        <div class="ftco-cover-1" style="background-image: url('{% static 'images/hero_2.jpg' %} ');"></div>
+        <div class="ftco-cover-1" style="background-image: url('{% static 'images/hero_3.jpg' %} ');"></div>
+        
+      </div>
+    </div>  
+
+  
+    
+
+    
+    
+    <footer class="site-footer bg-light">
+      <div class="container">
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+              <h2 class="footer-heading mb-4">About Us</h2>
+              <p>Our Signature Detection Application leverages advanced deep learning technology to ensure the highest accuracy in signature verification. Designed for businesses, banks, and legal institutions, our application detects forged signatures with precision, offering enhanced security and fraud prevention.</p>
+            <div class="pt-2">
+              <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
+            </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    </div>
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}  "></script>
+    <script src="{% static 'js/popper.min.js' %}  "></script>
+    <script src="{% static 'js/bootstrap.min.js' %}  "></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}  "></script>
+    <script src="{% static 'js/jquery.sticky.js' %}  "></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}  "></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}  "></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}  "></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}  "></script>
+    <script src="{% static 'js/aos.js' %}  "></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="{% static 'js/main.js' %} "></script>
+
+     <script>
+
+        function showLoader() {
+          document.getElementById('loader').style.display = 'flex';
+        }
+
+        function hideLoader() {
+          document.getElementById('loader').style.display = 'none';
+        }
+
+        document.getElementById('fileInput1').addEventListener('change', function(event) {
+          showPreview(event, 'preview1');
+        });
+
+        document.getElementById('fileInput2').addEventListener('change', function(event) {
+          showPreview(event, 'preview2');
+        });
+
+        function showPreview(event, previewId) {
+          const file = event.target.files[0];
+          const preview = document.getElementById(previewId);
+          if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              preview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          } else {
+            alert('Please select a valid image file.');
+          }
+        }
+
+
+        function CompareSignature(){
+
+          var file1 = document.getElementById('fileInput1').files[0];
+          var file2 = document.getElementById('fileInput2').files[0];
+
+          if (!file1) {
+            Toastify({
+              text: "Please Select first signature",
+              duration: 3000,
+              newWindow: true,
+              close: true,
+              gravity: "top",
+              position: "right", 
+              stopOnFocus: true, 
+              style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+              },
+              onClick: function(){} // Callback after click
+            }).showToast();
+              return; // Stop further execution
+          }
+          else if (!file2) {
+            Toastify({
+              text: "Please Select second signature",
+              duration: 3000,
+              newWindow: true,
+              close: true,
+              gravity: "top",
+              position: "right", 
+              stopOnFocus: true, 
+              style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+              },
+              onClick: function(){} // Callback after click
+            }).showToast();
+              return; // Stop further execution
+          }
+
+          showLoader()
+          var data = new FormData();
+          data.append('fileInput1',file1)
+          data.append('fileInput2', file2)
+           $.ajax({
+            method: "POST",
+            url: "/compare_sigature",
+            contentType: false,
+            cache: false,
+            processData: false,
+            enctype: "multipart/form-data",
+            data: data,
+            success: function (response) {
+                if (response.engine_res){
+                  $('#result_h3').html('SIGNATURE MATCHED')
+                  $('#result_h3').css('color','green')
+                }
+                else{
+                  $('#result_h3').html('SIGNATURE NOT MATCHED')
+                  $('#result_h3').css('color','red')
+                }
+                hideLoader()
+              }
+           })
+        }
+
+
+     </script>
+
+  </body>
+
+</html>
